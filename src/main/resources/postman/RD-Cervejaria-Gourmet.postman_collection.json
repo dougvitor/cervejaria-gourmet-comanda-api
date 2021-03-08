@@ -1,0 +1,447 @@
+{
+	"info": {
+		"_postman_id": "e1489f9c-5811-4fc4-87db-0e79bff7bb85",
+		"name": "RD-Cervejaria-Gourmet",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "PRODUTO - SAVE",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"nome\": \"Coca-Cola\",\r\n\t\"valor\": \"5.0\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/produto-api/produto",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"produto-api",
+						"produto"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PRODUTO - PUT",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json-patch+json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"nome\": \"Pepsi\",\r\n\t\"valor\": \"3.50\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/produto-api/produto/10",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"produto-api",
+						"produto",
+						"10"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PRODUTO - GET BY ID",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/produto-api/produto/5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"produto-api",
+						"produto",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PRODUTO - GET ALL",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/produto-api/produto",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"produto-api",
+						"produto"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PRODUTO - GET BY VALOR",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/produto-api/produto/filtro-por-valor-produto?page=0&size=1&sort=id,desc",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"produto-api",
+						"produto",
+						"filtro-por-valor-produto"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "0"
+						},
+						{
+							"key": "size",
+							"value": "1"
+						},
+						{
+							"key": "sort",
+							"value": "id,desc"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PRODUTO - DELETE",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/produto-api/produto/11",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"produto-api",
+						"produto",
+						"11"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PRODUTO - PATCH",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"content-type": true
+				}
+			},
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json-patch+json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {\"op\":\"replace\",\"path\":\"/nome\",\"value\":\"Heineken\"}\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/produto-api/produto/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"produto-api",
+						"produto",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PRODUTO - GET BY NOME",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/produto-api/produto/filtro-por-nome-produto/Coca-Cola",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"produto-api",
+						"produto",
+						"filtro-por-nome-produto",
+						"Coca-Cola"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "COMANDA - ABERTURA",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"nomeCliente\": \"João\",\r\n\t\"numeroMesa\": \"01\",\r\n    \"itens\": [\r\n       \r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/comanda-api/comanda/abertura",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"comanda-api",
+						"comanda",
+						"abertura"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "COMANDA - FECHAMENTO",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8081/comanda-api/comanda/fechamento/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"comanda-api",
+						"comanda",
+						"fechamento",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "COMANDA - ATUALIZAÇÃO",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nomeCliente\": \"João\",\r\n    \"numeroMesa\": \"02\",\r\n    \"valorTotal\": 15.00,\r\n    \"dataAbertura\": \"2021-03-07T16:25:41.049+00:00\",\r\n    \"itens\": [\r\n        {\r\n            \"id\": 27,\r\n            \"nomeProduto\": \"Coca-Cola\",\r\n            \"valorUnitarioProduto\": 5.00,\r\n            \"quantidade\": 2,\r\n            \"valorTotal\": 15.00\r\n        },\r\n         {\r\n            \"nomeProduto\": \"Pepsi\",\r\n            \"valorUnitarioProduto\": 5.00,\r\n            \"quantidade\": 5,\r\n            \"valorTotal\": 15.00\r\n        }\r\n    ],\r\n    \"dataFechamento\": null,\r\n    \"fechada\": false\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/comanda-api/comanda/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"comanda-api",
+						"comanda",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "COMANDA - ADICIONAR ITENS",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {\r\n        \"nomeProduto\": \"Coca-Cola\",\r\n        \"quantidade\": \"4\"\r\n    },\r\n    {\r\n        \"nomeProduto\": \"Skol\",\r\n        \"quantidade\": \"3\"\r\n    }\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/comanda-api/comanda/addItens/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"comanda-api",
+						"comanda",
+						"addItens",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "COMANDA - DELETE",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8081/comanda-api/comanda/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"comanda-api",
+						"comanda",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
